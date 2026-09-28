@@ -22,8 +22,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:fl
 .nav-links{display:flex;gap:1.5rem;list-style:none}
 .nav-links a{color:var(--gray);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--red)}
-.btn-nav-wa{padding:0.45rem 1.2rem;font-family:'Barlow Condensed',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;border:none;background:#25D366;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem}
-.btn-nav-wa:hover{background:#1da851}
+.btn-nav-wa{padding:0.5rem 1.3rem;font-family:'Barlow Condensed',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;border:none;border-radius:6px;background:linear-gradient(90deg,#c8102e,#ef4444);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;box-shadow:0 4px 14px rgba(200,16,46,0.35)}
+.btn-nav-wa:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 6px 18px rgba(200,16,46,0.5)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 2rem;padding-top:70px}
@@ -36,10 +36,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:fl
 .hero-title .red{color:var(--red)}
 .hero-sub{font-size:clamp(0.9rem,2vw,1.15rem);color:var(--gray);font-weight:300;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2.5rem;line-height:1.7}
 .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:var(--red);color:#fff;border:none;padding:0.85rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
-.btn-wa{background:#25D366;color:#fff;border:none;padding:0.85rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-wa:hover{background:#1da851;transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(90deg,#c8102e,#ef4444);color:#fff;border:none;border-radius:6px;padding:0.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-decoration:none;display:inline-block;box-shadow:0 6px 18px rgba(200,16,46,0.35)}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,0.5)}
+.btn-wa{background:linear-gradient(90deg,#c8102e,#ef4444);color:#fff;border:none;border-radius:6px;padding:0.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-decoration:none;display:inline-block;box-shadow:0 6px 18px rgba(200,16,46,0.35)}
+.btn-wa:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,0.5)}
 .btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.25);padding:0.85rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
 .btn-outline:hover{border-color:var(--red);color:var(--red)}
 .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--gray);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase}
@@ -62,15 +62,27 @@ section{padding:5rem 2rem}
 
 /* TARIFS */
 .tarifs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
-.tarif-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.07);padding:2rem;position:relative;transition:border-color 0.3s}
-.tarif-card:hover{border-color:rgba(200,16,46,0.5)}
-.tarif-card.featured{border-color:var(--red)}
-.tarif-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+.tarif-card{position:relative;background:linear-gradient(145deg,#161616 0%,#0d0d0d 100%);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:2rem 1.5rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1);--card-accent:linear-gradient(90deg,#ef4444,#b91c1c);--card-glow:rgba(200,16,46,0.2);--accent-solid:var(--red)}
+.tarif-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--card-accent);transition:all 0.3s}
+.tarif-card:hover{transform:translateY(-8px);border-color:var(--accent-solid);box-shadow:0 15px 35px var(--card-glow)}
+.tarif-card:hover::before{height:6px}
+.tarif-card.featured{border-color:var(--accent-solid)}
+.tarif-card.muscu-h{--card-accent:linear-gradient(90deg,#ef4444,#b91c1c);--card-glow:rgba(239,68,68,0.25);--accent-solid:#ef4444}
+.tarif-card.muscu-f{--card-accent:linear-gradient(90deg,#f43f5e,#ec4899);--card-glow:rgba(244,63,94,0.2);--accent-solid:#f43f5e}
+.tarif-card.aerobic{--card-accent:linear-gradient(90deg,#ec4899,#8b5cf6);--card-glow:rgba(236,72,153,0.2);--accent-solid:#ec4899}
+.tarif-card.arts-martiaux{--card-accent:linear-gradient(90deg,#f59e0b,#d97706);--card-glow:rgba(245,158,11,0.2);--accent-solid:#f59e0b}
+.tarif-card.pack{--card-accent:linear-gradient(90deg,#c8102e,#ef4444);--card-glow:rgba(200,16,46,0.3);--accent-solid:var(--red)}
+.tarif-card.pack-f{--card-accent:linear-gradient(90deg,#f43f5e,#ec4899);--card-glow:rgba(244,63,94,0.25);--accent-solid:#f43f5e}
+.tarif-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;letter-spacing:0.05em;color:var(--white)}
+.tarif-name span.accent-text{background:var(--card-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.price-note{display:inline-block;font-size:0.85rem;font-weight:700;color:#fff;background:rgba(255,255,255,0.04);border:1px solid var(--accent-solid);border-left:4px solid var(--accent-solid);border-radius:6px;padding:0.5rem 0.85rem;margin:0.2rem 0 1.3rem;letter-spacing:0.02em}
+.btn-inscrire{display:block;text-align:center;width:100%;background:var(--card-accent);color:#fff;border:none;border-radius:6px;padding:0.9rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 18px var(--card-glow)}
+.btn-inscrire:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 26px var(--card-glow)}
 .tarif-badge{font-size:0.75rem;background:var(--red);color:#fff;padding:0.15rem 0.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.05em}
 .price-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1.5rem}
-.price-item{background:var(--dark3);padding:0.7rem 0.8rem;border-left:2px solid var(--red)}
+.price-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-solid);border-radius:4px;padding:0.7rem 0.8rem}
 .price-dur{font-size:0.72rem;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase}
-.price-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--red)}
+.price-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--accent-solid)}
 
 /* PREMIUM PLANNING DESIGN */
 
@@ -158,10 +170,7 @@ section{padding:5rem 2rem}
   --card-accent: linear-gradient(90deg, #f59e0b, #d97706);
   --card-glow: rgba(245, 158, 11, 0.2);
 }
-.planning-card.condition {
-  --card-accent: linear-gradient(90deg, #06b6d4, #3b82f6);
-  --card-glow: rgba(6, 182, 212, 0.2);
-}
+
 .planning-card.promo-card {
   --card-accent: linear-gradient(90deg, #c8102e, #111);
   --card-glow: rgba(200, 16, 46, 0.3);
@@ -221,7 +230,7 @@ section{padding:5rem 2rem}
 .muscu-f .planning-day { --day-accent: #f43f5e; }
 .muscu-h .planning-day { --day-accent: #ef4444; }
 .arts-martiaux .planning-day { --day-accent: #f59e0b; }
-.condition .planning-day { --day-accent: #06b6d4; }
+
 
 .planning-hours {
   color: #ccc;
@@ -241,8 +250,8 @@ section{padding:5rem 2rem}
 .info-icon{width:42px;height:42px;background:rgba(200,16,46,0.12);border:1px solid rgba(200,16,46,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
 .info-label{font-size:0.7rem;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.2rem}
 .info-val{font-size:0.95rem;font-weight:500;line-height:1.6}
-.wa-big-btn{display:flex;align-items:center;justify-content:center;gap:0.8rem;background:#25D366;color:#fff;padding:1.1rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;margin-top:1rem}
-.wa-big-btn:hover{background:#1da851;transform:translateY(-2px)}
+.wa-big-btn{display:flex;align-items:center;justify-content:center;gap:0.8rem;background:linear-gradient(90deg,#c8102e,#ef4444);color:#fff;border-radius:6px;padding:1.1rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;margin-top:1rem;box-shadow:0 6px 18px rgba(200,16,46,0.35)}
+.wa-big-btn:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,0.5)}
 .wa-note{font-size:0.78rem;color:var(--gray);margin-top:0.6rem;text-align:center;line-height:1.5}
 .map-frame{width:100%;height:320px;border:1px solid rgba(200,16,46,0.2);filter:grayscale(0.5) contrast(1.1)}
 .social-row{display:flex;gap:0.8rem;margin-top:1.2rem}
@@ -274,7 +283,7 @@ section{padding:5rem 2rem}
 }
 .soc-btn.instagram:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  border-color: transparent;
+  
   color: #fff;
   box-shadow: 0 5px 15px rgba(214, 36, 159, 0.45);
 }
@@ -284,12 +293,7 @@ section{padding:5rem 2rem}
   color: #fff;
   box-shadow: 0 5px 15px rgba(24, 119, 242, 0.45);
 }
-.soc-btn.tiktok:hover {
-  background: #000000;
-  border-color: #00f2fe;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
-}
+
 
 /* FOOTER */
 footer{background:var(--black);border-top:1px solid rgba(200,16,46,0.15);padding:2rem;text-align:center}
@@ -297,7 +301,7 @@ footer{background:var(--black);border-top:1px solid rgba(200,16,46,0.15);padding
 .footer-logo span{color:var(--red)}
 
 /* WHATSAPP FLOAT */
-.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 22px rgba(37,211,102,0.45);transition:transform 0.2s;text-decoration:none}
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:54px;height:54px;background:linear-gradient(135deg,#c8102e,#ef4444);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 22px rgba(200,16,46,0.5);transition:transform 0.2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.12)}
 
 /* REVEAL */
@@ -365,7 +369,155 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
   .stat-item:last-child{border-bottom:none}
 }
 
+
+/* ===== INTERACTIVE PLANNING ===== */
+.planning-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(200, 16, 46, 0.3);
+}
+
+  
+  
+  
+}
+
+.planning-card {
+  cursor: pointer;
+}
+.planning-card.expanded {
+  grid-column: 1 / -1;
+  max-height: 800px;
+}
+.planning-card .expand-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: var(--gray);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+.planning-card:hover .expand-hint {
+  color: var(--white);
+}
+.planning-card.expanded .expand-hint {
+  display: none;
+}
+.planning-card .expanded-content {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  animation: slideDown 0.4s ease;
+}
+.planning-card.expanded .expanded-content {
+  display: block;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.expanded-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.expanded-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+.expanded-item:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-4px);
+}
+.expanded-item h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.expanded-item h4::before {
+  content: '';
+  width: 8px; height: 8px;
+  
+  border-radius: 2px;
+}
+.expanded-item ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.expanded-item li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+.expanded-item li::before {
+  content: '✓';
+  color: #06b6d4;
+  font-weight: bold;
+}
+
+
+
+
+/* Micro-interactions */
+.planning-row {
+  transition: all 0.2s;
+}
+.planning-row:hover .planning-day {
+  transform: scale(1.05);
+}
+.planning-row:hover .planning-hours {
+  color: var(--white);
+}
+
 @media(max-width:768px){
+
+
+
+  .planning-filters { gap: 0.5rem; }
+  .filter-btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
+  .wa-float { bottom: 1rem; right: 1rem; width: 48px; height: 48px; }
   .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
   .gal-item.gal-large{grid-column:span 2}
 }
@@ -402,7 +554,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
     <h1 class="hero-title">FORGE<br>YOUR <span class="red">LEGEND</span></h1>
     <p class="hero-sub">Plus qu'une salle — une famille.<br>Musculation · Arts Martiaux · Aérobic</p>
     <div class="hero-ctas">
-      <a class="btn-wa" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20à%20Legend%20Fitness%20!" target="_blank">💬 S'inscrire sur WhatsApp</a>
+      <a class="btn-primary" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20à%20Legend%20Fitness%20!" target="_blank">💬 S'inscrire</a>
       <a class="btn-outline" href="#tarifs">Voir les tarifs</a>
     </div>
   </div>
@@ -426,45 +578,71 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
       <div class="red-bar"></div>
     </div>
     <div class="tarifs-grid reveal">
-      <div class="tarif-card">
-        <div class="tarif-name">💪 Musculation</div>
+      <div class="tarif-card muscu-h">
+        <div class="tarif-name"><span class="accent-text">Musculation Hommes</span></div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">200 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">500 DH</div></div>
           <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">950 DH</div></div>
           <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">1800 DH</div></div>
         </div>
-        <a class="btn-wa" style="display:block;text-align:center;width:100%" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20Musculation%20!" target="_blank">💬 S'inscrire</a>
+        <div class="price-note">Assurance : +50 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20Musculation%20Hommes%20!" target="_blank">💬 S'inscrire</a>
       </div>
-      <div class="tarif-card">
-        <div class="tarif-name">🥋 Arts Martiaux</div>
+      <div class="tarif-card muscu-f">
+        <div class="tarif-name"><span class="accent-text">Musculation Femmes</span></div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">200 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">500 DH</div></div>
           <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">950 DH</div></div>
           <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">1800 DH</div></div>
         </div>
-        <a class="btn-wa" style="display:block;text-align:center;width:100%" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20Arts%20Martiaux%20!" target="_blank">💬 S'inscrire</a>
+        <div class="price-note">Assurance : +100 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20Musculation%20Femmes%20!" target="_blank">💬 S'inscrire</a>
       </div>
-      <div class="tarif-card">
-        <div class="tarif-name">🏃 Aérobic</div>
+      <div class="tarif-card aerobic">
+        <div class="tarif-name"><span class="accent-text">Aérobic Femmes</span></div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">200 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">500 DH</div></div>
           <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">950 DH</div></div>
           <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">1800 DH</div></div>
         </div>
-        <a class="btn-wa" style="display:block;text-align:center;width:100%" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20A%C3%A9robic%20!" target="_blank">💬 S'inscrire</a>
+        <div class="price-note">Assurance : +100 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20A%C3%A9robic%20Femmes%20!" target="_blank">💬 S'inscrire</a>
       </div>
-      <div class="tarif-card featured">
-        <div class="tarif-name">⚡ Pack Muscu + Arts Martiaux <span class="tarif-badge">POPULAIRE</span></div>
+      <div class="tarif-card arts-martiaux">
+        <div class="tarif-name"><span class="accent-text">Arts Martiaux</span></div>
+        <div class="price-row">
+          <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">200 DH</div></div>
+          <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">500 DH</div></div>
+          <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">950 DH</div></div>
+          <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">1800 DH</div></div>
+        </div>
+        <div class="price-note">Assurance obligatoire : +150 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20m'inscrire%20en%20Arts%20Martiaux%20!" target="_blank">💬 S'inscrire</a>
+      </div>
+      <div class="tarif-card featured pack">
+        <div class="tarif-name"><span class="accent-text">Pack Hommes</span> <span class="tarif-badge">POPULAIRE</span></div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">300 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">800 DH</div></div>
           <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">1500 DH</div></div>
           <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">2200 DH</div></div>
         </div>
-        <a class="btn-primary" style="display:block;text-align:center;width:100%" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20le%20Pack%20Musculation%20%2B%20Arts%20Martiaux%20!" target="_blank">💬 Choisir ce pack</a>
+        <div class="price-note">Assurance : +150 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20le%20Pack%20Hommes%20!" target="_blank">💬 Choisir ce pack</a>
+      </div>
+      <div class="tarif-card featured pack-f">
+        <div class="tarif-name"><span class="accent-text">Pack Femmes</span> <span class="tarif-badge">POPULAIRE</span></div>
+        <div class="price-row">
+          <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">300 DH</div></div>
+          <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">800 DH</div></div>
+          <div class="price-item"><div class="price-dur">6 mois</div><div class="price-val">1500 DH</div></div>
+          <div class="price-item"><div class="price-dur">12 mois</div><div class="price-val">2200 DH</div></div>
+        </div>
+        <div class="price-note">Assurance : +100 DH</div>
+        <a class="btn-inscrire" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20le%20Pack%20Femmes%20!" target="_blank">💬 Choisir ce pack</a>
       </div>
     </div>
   </div>
@@ -556,7 +734,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
         </div>
         <div class="planning-row">
           <span class="planning-day">Dimanche</span>
-          <span class="planning-hours">08h – 12h</span>
+          <span class="planning-hours">Fermé</span>
         </div>
       </div>
 
@@ -566,46 +744,29 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
         <div class="planning-row">
           <span class="planning-day">Lundi</span>
           <span class="planning-hours">
-            <span>Kids 1 : 18h – 19h</span>
-            <span>Kids 2 : 19h – 20h</span>
-            <span>Adulte 1 : 20h – 21h</span>
-            <span>Adulte 2 : 21h – 22h</span>
+            <span>Enfant G1 : 18h30 – 19h30</span>
+            <span>Enfant G2 : 19h30 – 20h30</span>
+            <span>Adulte G1 : 20h30 – 21h30</span>
+            <span>Adulte G2 : 21h30 – 22h30</span>
           </span>
         </div>
         <div class="planning-row">
           <span class="planning-day">Mercredi</span>
           <span class="planning-hours">
-            <span>Kids 1 : 18h – 19h</span>
-            <span>Kids 2 : 19h – 20h</span>
-            <span>Adulte 1 : 20h – 21h</span>
-            <span>Adulte 2 : 21h – 22h</span>
+            <span>Enfant G1 : 18h30 – 19h30</span>
+            <span>Enfant G2 : 19h30 – 20h30</span>
+            <span>Adulte G1 : 20h30 – 21h30</span>
+            <span>Adulte G2 : 21h30 – 22h30</span>
           </span>
         </div>
         <div class="planning-row">
           <span class="planning-day">Vendredi</span>
           <span class="planning-hours">
-            <span>Kids 1 : 18h – 19h</span>
-            <span>Kids 2 : 19h – 20h</span>
-            <span>Adulte 1 : 20h – 21h</span>
-            <span>Adulte 2 : 21h – 22h</span>
+            <span>Enfant G1 : 18h30 – 19h30</span>
+            <span>Enfant G2 : 19h30 – 20h30</span>
+            <span>Adulte G1 : 20h30 – 21h30</span>
+            <span>Adulte G2 : 21h30 – 22h30</span>
           </span>
-        </div>
-      </div>
-
-      <!-- Card 5: Condition Physique -->
-      <div class="planning-card condition">
-        <div class="planning-title"><span class="accent-text">Condition Physique</span></div>
-        <div class="planning-row">
-          <span class="planning-day">Mardi</span>
-          <span class="planning-hours">21h30 – 22h30</span>
-        </div>
-        <div class="planning-row">
-          <span class="planning-day">Jeudi</span>
-          <span class="planning-hours">21h30 – 22h30</span>
-        </div>
-        <div class="planning-row">
-          <span class="planning-day">Samedi</span>
-          <span class="planning-hours">16h – 17h</span>
         </div>
       </div>
 
@@ -622,14 +783,18 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
         <a class="btn-wa" style="display:block;text-align:center;width:100%;border-radius:6px;font-weight:700" href="https://wa.me/212625412264?text=Salam%2C%20je%20veux%20rejoindre%20Legend%20Fitness%20!" target="_blank">💬 Rejoindre maintenant</a>
       </div>
     </div>
+
+    <!-- Planning Filters -->
+    <div class="planning-filters" id="planningFilters">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="aerobic">Aérobic</button>
+      <button class="filter-btn" data-filter="muscu-f">Muscu Femmes</button>
+      <button class="filter-btn" data-filter="muscu-h">Muscu Hommes</button>
+      <button class="filter-btn" data-filter="arts-martiaux">Arts Martiaux</button>
+      
+    </div>
   </div>
 </section>
-
-
-
-
-
-
 
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
@@ -664,7 +829,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
               Lun / Mer / Ven : 08h00 – 22h00<br>
               Mar / Jeu : 08h00 – 23h30<br>
               Samedi : 08h00 – 20h00<br>
-              Dimanche : 08h00 – 12h00
+              Dimanche : Fermé
             </div>
           </div>
         </div>
@@ -693,7 +858,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
     <div class="footer-logo" style="margin-bottom:0">LEGEND <span>FITNESS</span></div>
   </div>
   <p style="color:var(--gray);font-size:0.8rem;margin-bottom:0.3rem">Boulevard Smara – Ain Chok, Casablanca · 0625 – 41 22 64</p>
-  <p style="color:var(--gray);font-size:0.78rem">© 2026 Legend Fitness · Plus qu'une salle, une famille</p>
+  <div class="footer-social" style="display:flex; justify-content:center; gap:0.8rem; margin:1rem 0;"><a href="https://www.instagram.com/legendfitness_1/" target="_blank" class="soc-btn instagram" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div><p style="color:var(--gray);font-size:0.78rem">© 2026 Legend Fitness · Plus qu'une salle, une famille</p>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
@@ -779,6 +944,216 @@ sObs.observe(document.querySelector('.stats-bar'));
 // REVEAL
 document.querySelectorAll('.reveal').forEach(r=>{
   new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1}).observe(r);
+});
+
+// PLANNING INTERACTIVE - Filters & Expandable Cards
+const filterBtns = document.querySelectorAll('.filter-btn');
+const planningCards = document.querySelectorAll('.planning-card');
+
+// Filter functionality
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    
+    planningCards.forEach(card => {
+      card.classList.remove('expanded');
+      if (filter === 'all' || card.classList.contains(filter)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Expandable cards - Pre-build expanded content for each category
+const expandedContents = {
+  'aerobic': `
+    <div class="expanded-content">
+      <div class="expanded-grid">
+        <div class="expanded-item">
+          <h4>Ce que vous travaillez</h4>
+          <ul>
+            <li>Cardio & endurance</li>
+            <li>Coordination & rythme</li>
+            <li>Renforcement bas du corps</li>
+            <li>Brûlage calories (400-600/séance)</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Niveaux proposés</h4>
+          <ul>
+            <li>Débutant (Group 1-2)</li>
+            <li>Intermédiaire (Group 3)</li>
+            <li>Avancé (Group 4)</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Équipement requis</h4>
+          <ul>
+            <li>Tenue confortable</li>
+            <li>Chaussures de sport</li>
+            <li>Serviette & bouteille d'eau</li>
+          </ul>
+        </div>
+      </div>
+    </div>`,
+  'muscu-f': `
+    <div class="expanded-content">
+      <div class="expanded-grid">
+        <div class="expanded-item">
+          <h4>Programme musculation femmes</h4>
+          <ul>
+            <li>Circuit full body 3x/semaine</li>
+            <li>Focus fessiers, jambes, abdos</li>
+            <li>Machines guidées + poids libres</li>
+            <li>Progression par charges</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Horaires flexibles</h4>
+          <ul>
+            <li>Mardi/Jeudi: 8h-10h & 16h-20h</li>
+            <li>Samedi: 8h-14h (libre)</li>
+            <li>Accès libre hors cours</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Coaching inclus</h4>
+          <ul>
+            <li>Programme personnalisé</li>
+            <li>Correction technique</li>
+            <li>Suivi mensuel mesures</li>
+          </ul>
+        </div>
+      </div>
+    </div>`,
+  'muscu-h': `
+    <div class="expanded-content">
+      <div class="expanded-grid">
+        <div class="expanded-item">
+          <h4>Zone hommes complète</h4>
+          <ul>
+            <li>Poids libres & machines</li>
+            <li>Rack squat, banc, deadlift</li>
+            <li>Zone cross-training</li>
+            <li>Cardio HIIT dédié</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Horaires étendus</h4>
+          <ul>
+            <li>Lun/Mer/Ven: 8h-22h</li>
+            <li>Mar/Jeu: 11h-15h & 21h30-23h30</li>
+            <li>Sam: 15h-20h / Dim: 8h-12h</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Options coaching</h4>
+          <ul>
+            <li>Force / Hypertrophie / Powerlifting</li>
+            <li>Prépa compétition</li>
+            <li>Suivi nutritionnel</li>
+          </ul>
+        </div>
+      </div>
+    </div>`,
+  'arts-martiaux': `
+    <div class="expanded-content">
+      <div class="expanded-grid">
+        <div class="expanded-item">
+          <h4>Disciplines enseignées</h4>
+          <ul>
+            <li>Karaté Shotokan (Kihon, Kata, Kumite)</li>
+            <li>Kickboxing / Muay Thai</li>
+            <li>Self-défense urbaine</li>
+            <li>Prépa ceinture noire</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Groupes & horaires</h4>
+          <ul>
+            <li>Enfant G1 (6-12 ans): 18h30-19h30</li>
+            <li>Enfant G2 (6-12 ans): 19h30-20h30</li>
+            <li>Adulte G1: 20h30-21h30</li>
+            <li>Adulte G2: 21h30-22h30</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Valeurs & progression</h4>
+          <ul>
+            <li>Discipline, respect, confiance</li>
+            <li>Passages de grades officiels</li>
+            <li>Compétitions régionales/nationales</li>
+          </ul>
+        </div>
+      </div>
+    </div>`,
+  'promo-card': `
+    <div class="expanded-content">
+      <div class="expanded-grid">
+        <div class="expanded-item">
+          <h4>Nos engagements</h4>
+          <ul>
+            <li>Coachs certifiés & passionnés</li>
+            <li>Matériel Technogym / Eleiko</li>
+            <li>Vestiaires premium & douches</li>
+            <li>Climatisation & ventilation</li>
+            <li>Parking gratuit & sécurisé</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Témoignages membres</h4>
+          <ul>
+            <li>"Meilleure salle de Casablanca!" - Youssef</li>
+            <li>"Ambiance de folie, résultats réels" - Sarah</li>
+            <li>"Coach Abderrazak au top" - Karim</li>
+            <li>"Ma 2ème famille" - Fatima</li>
+          </ul>
+        </div>
+        <div class="expanded-item">
+          <h4>Offre découverte</h4>
+          <ul>
+            <li>1 séance offerte pour tester</li>
+            <li>Bilan forme gratuit</li>
+            <li>Programme 7 jours offert</li>
+            <li>Sans engagement</li>
+          </ul>
+        </div>
+      </div>
+    </div>`
+};
+
+planningCards.forEach(card => {
+  // Find the category class
+  let category = null;
+  const classes = ['aerobic', 'muscu-f', 'muscu-h', 'arts-martiaux', 'promo-card'];
+  for (const cls of classes) {
+    if (card.classList.contains(cls)) {
+      category = cls;
+      break;
+    }
+  }
+  
+  // Add expand hint
+  const hint = document.createElement('div');
+  hint.className = 'expand-hint';
+  hint.innerHTML = 'Cliquez pour voir les détails <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+  card.appendChild(hint);
+  
+  // Add expanded content if category found
+  if (category && expandedContents[category]) {
+    card.innerHTML += expandedContents[category];
+  }
+  
+  // Click handler
+  card.addEventListener('click', (e) => {
+    // Don't expand if clicking on a button/link
+    if (e.target.closest('.btn-wa') || e.target.closest('.btn-primary') || e.target.closest('.btn-outline')) return;
+    card.classList.toggle('expanded');
+  });
 });
 
 // ADMIN ACCESS — URL hash secret
@@ -900,5 +1275,5 @@ function exportCSV(){
 // The WA button opens WhatsApp — inscriptions are managed via WA by the owner
 // Admin dash can also have manual entry
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0fd26b819e9638d',t:'MTc4MjE1MTIxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0fd26b819e9638d',t:'MTc4MjE1MTIxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4226abe0b07e17b',t:'MTc5MDU5NTAzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
