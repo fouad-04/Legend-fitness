@@ -78,6 +78,8 @@ section{padding:5rem 2rem}
 .price-note{display:inline-block;font-size:0.85rem;font-weight:700;color:#fff;background:rgba(255,255,255,0.04);border:1px solid var(--accent-solid);border-left:4px solid var(--accent-solid);border-radius:6px;padding:0.5rem 0.85rem;margin:0.2rem 0 1.3rem;letter-spacing:0.02em}
 .btn-inscrire{display:block;text-align:center;width:100%;background:var(--card-accent);color:#fff;border:none;border-radius:6px;padding:0.9rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 18px var(--card-glow)}
 .btn-inscrire:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 26px var(--card-glow)}
+.pack-includes{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.03em;color:#fff;background:rgba(255,255,255,0.05);border-left:4px solid var(--accent-solid);border-radius:6px;padding:0.55rem 0.8rem;margin:-0.4rem 0 1.1rem}
+.pack-includes .plus{color:var(--accent-solid);font-size:1.15rem;font-weight:800}
 .tarif-badge{font-size:0.75rem;background:var(--red);color:#fff;padding:0.15rem 0.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.05em}
 .price-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1.5rem}
 .price-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-solid);border-radius:4px;padding:0.7rem 0.8rem}
@@ -558,7 +560,6 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
       <a class="btn-outline" href="#tarifs">Voir les tarifs</a>
     </div>
   </div>
-  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
 <!-- STATS -->
@@ -624,6 +625,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
       </div>
       <div class="tarif-card featured pack">
         <div class="tarif-name"><span class="accent-text">Pack Hommes</span> <span class="tarif-badge">POPULAIRE</span></div>
+        <div class="pack-includes">Arts Martiaux <span class="plus">+</span> Musculation</div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">300 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">800 DH</div></div>
@@ -635,6 +637,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
       </div>
       <div class="tarif-card featured pack-f">
         <div class="tarif-name"><span class="accent-text">Pack Femmes</span> <span class="tarif-badge">POPULAIRE</span></div>
+        <div class="pack-includes">Aérobic <span class="plus">+</span> Musculation</div>
         <div class="price-row">
           <div class="price-item"><div class="price-dur">1 mois</div><div class="price-val">300 DH</div></div>
           <div class="price-item"><div class="price-dur">3 mois</div><div class="price-val">800 DH</div></div>
@@ -730,7 +733,7 @@ table.it tr:hover td{background:rgba(200,16,46,0.05);color:var(--white)}
         </div>
         <div class="planning-row">
           <span class="planning-day">Samedi</span>
-          <span class="planning-hours">15h – 20h</span>
+          <span class="planning-hours">15h30 – 20h</span>
         </div>
         <div class="planning-row">
           <span class="planning-day">Dimanche</span>
@@ -1275,5 +1278,5 @@ function exportCSV(){
 // The WA button opens WhatsApp — inscriptions are managed via WA by the owner
 // Admin dash can also have manual entry
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0fd26b819e9638d',t:'MTc4MjE1MTIxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4226abe0b07e17b',t:'MTc5MDU5NTAzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0fd26b819e9638d',t:'MTc4MjE1MTIxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
